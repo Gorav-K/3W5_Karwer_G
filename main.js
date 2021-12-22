@@ -63,25 +63,35 @@ async function GetPath(data){
             return time
         }}});
 
-    //console.log(reformatTime);
-
     let speed = await GetSpeed()
     let startingTime = reformatTime[0].Time;
 
-    console.log(data[0].Name +"Stating time: "+ startingTime)
+    console.log(data[0].Name +" Stating time: "+ startingTime)
     let nextTime = startingTime
+
     for (let i = 1; i < data.length; i++){
+        
         let distance =await GetDistance(data[i-1].Name,data[i].Name)
-        nextTime = GetTime(nextTime,distance,speed)
-        console.log(nextTime);
+     
+        nextTime = await GetTime(nextTime,distance,speed)
+     
+        let x = nextTime.split(":")
+     
+        let ready = await new Promise ( function (resolve){  
+            setTimeout(function(){ resolve(console.log(nextTime)); },x[1]* 1000);
+        })
+
+        //console.log(nextTime);
+
+        console.log(data[i-1])
+    
     }
     
-} 
+}
 
 async function GetSpeed(){
     
     let speedAVG = await ReturnFetchResponse(trainSpeedURL)
-    console.log(speedAVG);
     return speedAVG[0].AverageSpeed
 }
 
@@ -126,10 +136,7 @@ async function GetTime(originalTime,distance,speed){
     // }
 
     let newtime = hours+":"+minutes+":"+seconds
-    console.log(newtime)
     return newtime
-    
-
 }
 
 
