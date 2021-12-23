@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="main.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
     <title>Document</title>
 </head>
+
 <body>
 
+    <div class="wrapper">
+        <header>
+            <h1>REM</h1>
+        </header>
+        <nav>
+            <ul>
+                <li> <a href="#">Presetation</a> </li>
+                <li> <a href="#">Worksite</a> </li>
+                <li> <a href="#">Citizens Space</a> </li>
+                <li> <a href="#">News</a> </li>
+                <li> <a href="#">Events</a> </li>
+            </ul>
+        </nav>
+        <main>
+            <div id="stationsLists">
+                <h2>Schedule</h2>
+                <div id=schedule>
+                    <label for="Start-Station">Start-Station:</label>
+                    <select name="Start-Station" id="start-station">
+                    </select>
 
-    <div id="stationsLists">
-        <label for="Start-Station">Start-Station:</label>
-        <select name="Start-Station" id="start-station">
-        </select>
+                    <label for="End-Station">End-Station:</label>
+                    <select name="End-Station" id="end-station">
+                    </select>
 
-        <label for="End-Station">End-Station:</label>
-        <select name="End-Station" id="end-station">
-        </select>
+                    <label for="Date">date:</label>
+                    <input type="date" id="date" name="date">
 
-        <label for="Date">date:</label>
-        <input type="date" id="date" name="date">
+                    <label for="startTime">Select a time:</label>
+                    <input type="time" id="startTime" name="startTime">
 
-        <label for="startTime">Select a time:</label>
-        <input type="time" id="startTime" name="startTime">
+                    <button id="btn-Schedule" type="button">Get Schedule</button>
 
-        <button id="btn-Schedule" type="button">Get Schedule</button>
+                </div>
+            </div>
+        </main>
+        <aside class="advertising">
+            <h2>
+                Covid-19 cases
+            </h2>
+            <div id="api1">
+            </div>
+        </aside>
+        <footer>
+            <h2>Path</h2>
 
+            <div id="stationPath">
+
+            </div>
+        </footer>
     </div>
-    <div>
-        <ul id="stationPath">
-            
-        </ul>
-    </div>
-    
+
+
+
 </body>
+
 </html>

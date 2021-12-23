@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  body{ font-family: 'Segoe UI', Verdana, sans-serif; }
+
+  header{
+    text-align: center;
+  }
+  header, nav, main, aside, footer {
+    background-color: #98FB98;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+  
+  #schedule{display: flex;
+    flex-direction: column;}
+
+  #btn-Schedule{
+      margin-top: 1rem;
+  }
+
+
+  #api1{
+    display: flex;
+    justify-content:center
+  }
+
+  nav li { text-align: center; }
+  
+  h2, p { margin: 1rem 0; }
+  
+  nav ul {
+    list-style: none;
+     /*display: flex;
+    flex-direction: column; */
+  }
+  
+  header { grid-area: hd; }
+  
+  nav { grid-area: nv; }
+  
+  main { grid-area: mn; }
+  
+  
+  .api { grid-area: api;}
+  
+  footer{ grid-area: ft ;}
+  
+    header, nav, main, aside, footer {
+      background-color: #68eec1;}
+    nav ul{
+      flex-direction: column;
+    }
+    .wrapper{
+        margin: 1rem;
+      display: grid;
+      grid-template: 
+      'hd hd hd hd'
+      'nv mn mn ad'
+      'nv mn mn ad'
+      'ft ft ft ft';
+      gap: 1rem;
+    }
