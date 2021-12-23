@@ -43,8 +43,7 @@ async function Fetch3( url, doStuff,idElement){
 
 //when the button is click
 document.getElementById("btn-Schedule").addEventListener("click", () =>{
-    console.log(sStation.value) // it get the start station 
-    console.log(eStation.value) // it get the start station 
+
     if(eStation.value===sStation.value){
         alert("ERROR The start-Station can not be end-Station")
     }
@@ -90,7 +89,6 @@ async function GetInfo(dataPath){
         else {
             if(changesegment == 0 ){
                 await AppendToScreen(dataPath[i+1].SegmentId,dataPath[i+1].Name,nextTime,"stationPath")
-            
                 changesegment =1
             }
             else{
@@ -187,13 +185,7 @@ async function AppendAll(data,appendId){
     let node = document.createElement("LI");
     if(data[3].length ===0 ){
         let textnode = document.createTextNode("Segment: "+data[0]+"and station: " +data[1] +"the new time will be: "+ data[2]+ "station Country: "+ data[4][0].Country);
-
-        // create the button object and add the text to it
-        var button = document.createElement("BUTTON");
-        button.innerHTML = "Button";
-
-        // add the button to the div
-        myDiv.appendChild(button)
+    
         node.appendChild(textnode); 
         return await new Promise ( function (resolve){  setTimeout(function(){ resolve(document.getElementById(appendId).appendChild(node)); }, 2* 1000);})
     }
